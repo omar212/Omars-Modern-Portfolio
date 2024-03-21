@@ -1,9 +1,17 @@
-const page = () => {
+"use client"
+import { motion } from "framer-motion";
+
+const AboutPage = () => {
     return (
-        <div>
+        <motion.div
+            className="h-full"
+            initial={{ y: "-200vh" }}
+            animate={{ y: "0%" }}
+            transition={{ duration: 1 }}
+        >
             About Page
-        </div>
+        </motion.div>
     );
 }
 
-export default page;
+export default AboutPage;
