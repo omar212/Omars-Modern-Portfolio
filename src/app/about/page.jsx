@@ -52,7 +52,7 @@ const AboutPage = () => {
             </span>
             {/* BIOGRAPHY SIGN SVG*/}
             <div className="self-end">
-                <Image src="/signature.svg" alt="" width={185} height={77} />
+                <Image src="/signature.png" alt="" width={185} height={77} />
             </div>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
