@@ -11,16 +11,16 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 gap-4">
         {/* IMAGE CONTAINER */}
         <div className="relative h-1/2 lg:h-full lg:w-1/2 ">
           <Image 
-            src="/arab-hero.png" 
+            src="/homeprofile.png" 
             alt="" 
             width="0"
             height="0"
             sizes="100vw"
-            className="w-full h-auto" 
+            className="w-fit h-auto ml-auto mr-[-17px] md:lg:xl:m-auto" 
           />
         </div>
 
