@@ -32,10 +32,10 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/profile.jpg"
               alt=""
-              width={112}
-              height={112}
+              width={150}
+              height={150}
               className="w-28 h-28 rounded-full object-cover"
             />
             {/* BIOGRAPHY TITLE */}
@@ -202,9 +202,10 @@ const AboutPage = () => {
             {/* EXPERIENCE LIST */}
             <motion.div
               animate={isExperienceRefInView ? { x: "0" } : {}}
-              className="flex flex-col sm:flex-row md:flex-row gap-8 justify-between h-48"
+              className="flex flex-col sm:flex-row md:flex-row gap-8 justify-between h-48 w-full"
             >
               {/* First Card */}
+              <div className="w-1/3">
                 <Card
                   jobTitle="Senior React Developer"
                   jobDesc={[
@@ -215,7 +216,9 @@ const AboutPage = () => {
                   jobDate="June 2023 - January 2024"
                   jobCompany="Doran Jones"
                 />
+              </div>
 
+              <div className="w-1/3">
               {/* Second Card */}
               <Card
                 jobTitle="Software Engineer/Full Stack Developer"
@@ -228,7 +231,9 @@ const AboutPage = () => {
                 jobDate="May 2019 - May 2023"
                 jobCompany="IBM" 
               />
-                            
+              </div>
+
+              <div className="w-1/3">        
               {/* Third Card */}
               <Card
                 jobTitle="Full Stack Developer"
@@ -239,6 +244,7 @@ const AboutPage = () => {
                 jobDate="January 2021 - January 2022"
                 jobCompany="FirmConnect"
               />
+              </div>
             </motion.div>
           </div>
         </div>
