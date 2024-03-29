@@ -58,7 +58,7 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-black">
+                <div className="flex flex-col m-2 gap-8 text-black">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
@@ -71,7 +71,7 @@ const PortfolioPage = () => {
                   {/* Create Skills Used Section */}
                   <div className="flex flex-col gap-4 text-gray-700 ">
                     <span className="font-bold">Skills Used:</span>
-                    <div className="grid auto-rows-max sm:md:flex gap-4">
+                    <div className="flex flex-col sm:md:lg:xl:flex-row gap-4">
                         {item.skills.map((skill) => (
                             <span key={skill} className="flex gap-2 bg-gray-300 p-2 rounded justify-center items-center">
                                 { doesSkillImageExist(skill) && <Image src={`${skillImages[skill]}`} alt="" width={40} height={40} className="" /> }

@@ -6,7 +6,7 @@ export const items = [
         desc: "The ChatGPT AI Voice Chatbot is a full-stack React project that uses TypeScript, Tailwind CSS, and Python with FastAPI and Uvicorn as the backend to communicate with OpenAI and Eleven Labs APIs for an interactive chatbot experience.",
         img: "ChatGPTProject.png",
         link: "https://github.com/omar212/MenaVoiceChatGPT/",
-        skills: ["React", "TypeScript", "Tailwind", "Python", "OpenAI", "FastAPI"]
+        skills: ["React", "TypeScript", "Tailwind", "Python", "OpenAI"]
     },
     {
         id: 2,
