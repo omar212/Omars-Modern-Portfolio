@@ -6,7 +6,7 @@ export const items = [
         desc: "The ChatGPT AI Voice Chatbot is a full-stack React project that uses TypeScript, Tailwind CSS, and Python with FastAPI and Uvicorn as the backend to communicate with OpenAI and Eleven Labs APIs for an interactive chatbot experience.",
         img: "ChatGPTProject.png",
         link: "https://github.com/omar212/MenaVoiceChatGPT/",
-        skills: ["React", "TypeScript", "Tailwind", "Python", "OpenAI", "FastAPI", "Uvicorn", "Eleven Labs"]
+        skills: ["React", "TypeScript", "Tailwind", "Python", "OpenAI", "FastAPI"]
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ export const items = [
         desc: "This app interacts with GitHub to detect images in issue bodies and comments on the issue with the date and time. It is protected with BasicAuth and handles errors with helpful messages. Endpoints include retrieving issue info, checking for images, posting comments, and identifying images.",
         img: "GithubProject.png",
         link: "https://omar212.github.io/githubAPI/",
-        skills: ["React", "TypeScript", "Material UI", "Github", "Rest API"]
+        skills: ["React", "TypeScript", "Material UI", "Github", "REST API"]
     },
     {
         id: 7,
@@ -60,6 +60,6 @@ export const items = [
         desc: "This project is a cross-platform job search application built using React Native, designed to provide users with a seamless and intuitive job search experience. The app leverages RapidAPI to fetch real-time job data, ensuring up-to-date listings and streamlining the application process. Expo is utilized for smooth deployment across multiple platforms.",
         img: "JobFinderProject.png",
         link: "https://github.com/omar212/NeedAJobApp",
-        skills: ["React Native", "Expo", "RapidAPI"]
+        skills: ["React Native", "Expo", "Rapid API"]
     }
 ];

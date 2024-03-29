@@ -44,11 +44,14 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
-          Personal Projects
+        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-center">
+          <span className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl">
+            Personal Projects
+          </span>
         </div>
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
+            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
               <div
@@ -59,7 +62,7 @@ const PortfolioPage = () => {
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
-                  <div className="relative w-100 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[350px]">
+                  <div className="hidden md:lg:xl:block relative w-100 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[350px]">
                     <Image src={`/${item.img}`} alt="" fill />
                   </div>
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
@@ -68,11 +71,11 @@ const PortfolioPage = () => {
                   {/* Create Skills Used Section */}
                   <div className="flex flex-col gap-4 text-gray-700 ">
                     <span className="font-bold">Skills Used:</span>
-                    <div className="flex gap-4">
+                    <div className="grid auto-rows-max sm:md:flex gap-4">
                         {item.skills.map((skill) => (
                             <span key={skill} className="flex gap-2 bg-gray-300 p-2 rounded justify-center items-center">
-                                { doesSkillImageExist(skill) && <Image src={`${skillImages[skill]}`} alt="" width={40} height={40} /> }
-                            {skill}                            
+                                { doesSkillImageExist(skill) && <Image src={`${skillImages[skill]}`} alt="" width={40} height={40} className="" /> }
+                                {skill}                            
                             </span>
                         ))}
                     </div>
@@ -87,7 +90,9 @@ const PortfolioPage = () => {
         </div>
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-8xl">Do you have a project?</h1>
+        <span>
+          <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl">Do you have a project?</h1>
+        </span>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}
