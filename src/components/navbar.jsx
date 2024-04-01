@@ -97,20 +97,25 @@ const Navbar = () => {
                 </Link>
             </div>
             {/*  SOCIAL MEDIA ICONS */}
-            <div className="hidden md:flex gap-4 w-1/3">
-                <Link href="/">
+            <div className="
+                w-1/2 
+                flex
+                flex-row 
+                justify-around
+                
+                md:w-1/3
+                lg:w-1/3
+                ">
+                <Link href="https://github.com/omar212" target='_blank'>
                     <Image src="/github.png" alt="" width={24} height={24}/>
                 </Link>
-                <Link href="/">
+                <Link href="https://www.instagram.com/omarr_x/">
                     <Image src="/instagram.png" alt="" width={24} height={24}/>
                 </Link>
-                <Link href="/">
+                <Link href="https://www.linkedin.com/in/omar-elnagdy/">
                     <Image src="/linkedin.png" alt="" width={24} height={24}/>
                 </Link>
-                <Link href="/">
-                    <Image src="/facebook.png" alt="" width={24} height={24}/>
-                </Link>
-                <Link href="/">
+                <Link href="https://dribbble.com/omarr_x">
                     <Image src="/dribbble.png" alt="" width={24} height={24}/>
                 </Link>
             </div>
