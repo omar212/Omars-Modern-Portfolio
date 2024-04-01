@@ -40,9 +40,42 @@ const ContactPage = () => {
             animate={{ y: "0%" }}
             transition={{ duration: 1 }}
         >
-            <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+            <div className="
+                h-[100vh] 
+                flex 
+                flex-col 
+                gap-2 
+                px-4
+
+                sm:px-8
+
+                md:gap-0
+                md:px-12
+
+                lg:gap-0
+                lg:px-20
+                lg:flex-row
+                lg:justify-center
+                lg:items-center 
+                
+                xl:px-48 
+                xl:gap-0
+                xl:items-center">
                 {/* TEXT CONTAINER */}
-                <div className="h-1/2 m-auto lg:h-full lg:w-1/2 flex flex-row items-center justify-center text-6xl sm:text-3xl">
+                <div className="
+                    h-1/6  
+                    flex 
+                    flex-row 
+                    items-center 
+                    justify-center 
+                    text-3xl
+
+                    md:text-4xl 
+
+                    lg:h-full 
+                    lg:w-1/2  
+                    lg:text-6xl
+                    ">
                     <div>
                         {
                             text.split("").map((letter, index) => (
@@ -66,12 +99,31 @@ const ContactPage = () => {
                 <form 
                     ref={form} 
                     onSubmit={sendEmail} 
-                    className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24 mb-8 sm:p-12">
+                    className="
+                        h-fit 
+                        p-4
+                        bg-gray-50
+                        rounded-xl 
+                        text-xl 
+                        flex 
+                        flex-col 
+                        gap-8 
+                        justify-between
+                        mb-8
+                        contact-text
+                        
+                        sm:p-12
+
+                        md:p-10
+
+                        lg:h-fit 
+                        lg:w-1/2    
+                        lg:p-10">
                     <span>Dear Omar,</span>
                     <textarea className="bg-transparent border-b-2 outline-none resize-none" rows={6} name="user_message" />
                     <span>My email address:</span>
                     <input name="user_email" className="bg-transparent border-b-2 outline-none resize-none" type="email" />
-                    <span>Regards</span>
+                    <span>Best Regards,</span>
                     <button className="bg-purple-200 rounded p-4 text-gray-600 font-semibold">Send</button> 
                     {
                         success && <span className="text-green-500">Message Sent!</span>
