@@ -90,7 +90,7 @@ const Navbar = () => {
                 ))}
             </div>
             {/* LOGO */}
-            <div className='md:hidden lg:flex xl:w-1/3 xl:justify-center'>
+            <div className='hidden md:hidden lg:flex xl:w-1/3 xl:justify-center'>
                 <Link href="/" className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center'>
                     <span className='text-white mr-2'>Omar</span>
                     <span className='w-12 h-8 rounded bg-white text-black flex items-center justify-center'>.dev</span>
@@ -98,25 +98,26 @@ const Navbar = () => {
             </div>
             {/*  SOCIAL MEDIA ICONS */}
             <div className="
-                w-1/2 
+                w-full 
                 flex
                 flex-row 
                 justify-around
                 
+                sm:w-1/2
                 md:w-1/3
                 lg:w-1/3
                 ">
+                <Link href="https://www.buymeacoffee.com/omar.dev" target='_blank'>
+                    <Image src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="" width={100} height={100}/>
+                </Link>
                 <Link href="https://github.com/omar212" target='_blank'>
                     <Image src="/github.png" alt="" width={24} height={24}/>
                 </Link>
-                <Link href="https://www.instagram.com/omarr_x/">
+                <Link href="https://www.instagram.com/omarr_x/" target='_blank'>
                     <Image src="/instagram.png" alt="" width={24} height={24}/>
                 </Link>
-                <Link href="https://www.linkedin.com/in/omar-elnagdy/">
+                <Link href="https://www.linkedin.com/in/omar-elnagdy/" target='_blank'>
                     <Image src="/linkedin.png" alt="" width={24} height={24}/>
-                </Link>
-                <Link href="https://dribbble.com/omarr_x">
-                    <Image src="/dribbble.png" alt="" width={24} height={24}/>
                 </Link>
             </div>
             {/* Responsive Menu */}
