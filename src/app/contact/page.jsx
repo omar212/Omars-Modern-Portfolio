@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
+import ResumeButton from "./resumeButton";
+import ShareButton from "./shareButton";
 
 const ContactPage = () => {
     const text = "Say Hello!"
@@ -96,42 +98,55 @@ const ContactPage = () => {
                     </div>
                 </div>
                 {/* FORM CONTAINER */}
-                <form 
-                    ref={form} 
-                    onSubmit={sendEmail} 
-                    className="
-                        h-fit 
-                        p-4
-                        bg-gray-50
-                        rounded-xl 
-                        text-xl 
-                        flex 
-                        flex-col 
-                        gap-8 
-                        justify-between
-                        mb-8
-                        contact-text
-                        
-                        sm:p-12
+                <div className="
+                    xl:flex
+                    xl:flex-col
+                    xl: w-full
+                    xl:justify-center
+                    xl:items-center
+                ">
+                    <form 
+                        ref={form} 
+                        onSubmit={sendEmail} 
+                        className="
+                            h-fit 
+                            p-4
+                            bg-gray-50
+                            rounded-xl 
+                            text-xl 
+                            flex 
+                            flex-col 
+                            gap-8 
+                            justify-between
+                            mb-8
+                            contact-text
+                            
+                            sm:p-12
 
-                        md:p-10
+                            md:p-10
 
-                        lg:h-fit 
-                        lg:w-1/2    
-                        lg:p-10">
-                    <span>Dear Omar,</span>
-                    <textarea className="bg-transparent border-b-2 outline-none resize-none" rows={6} name="user_message" />
-                    <span>My email address:</span>
-                    <input name="user_email" className="bg-transparent border-b-2 outline-none resize-none" type="email" />
-                    <span>Best Regards,</span>
-                    <button className="bg-purple-200 rounded p-4 text-gray-600 font-semibold">Send</button> 
-                    {
-                        success && <span className="text-green-500">Message Sent!</span>
-                    }
-                    {
-                        error && <span className="text-red-500">Message Failed!</span>
-                    }
-                </form>
+                            lg:h-fit 
+                            lg:w-1/2    
+                            lg:p-10">
+                        <span>Dear Omar,</span>
+                        <textarea className="bg-transparent border-b-2 outline-none resize-none" rows={6} name="user_message" />
+                        <span>My email address:</span>
+                        <input name="user_email" className="bg-transparent border-b-2 outline-none resize-none" type="email" />
+                        <span>Best Regards,</span>
+                        <button className="bg-purple-200 rounded p-4 text-gray-600 font-semibold">Send</button> 
+                        {
+                            success && <span className="text-green-500">Message Sent!</span>
+                        }
+                        {
+                            error && <span className="text-red-500">Message Failed!</span>
+                        }
+                    </form>
+                    <div className="flex gap-5 justify-center">
+                        <ResumeButton />
+                        <ShareButton />
+                    </div>
+                </div>
+                
             </div>
         </motion.div>
     );
