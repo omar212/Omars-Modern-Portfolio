@@ -4,6 +4,8 @@ import Card from "@/components/card";
 import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { jobs } from "./jobs";
+import Link from "next/link";
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -202,49 +204,71 @@ const AboutPage = () => {
             {/* EXPERIENCE LIST */}
             <motion.div
               animate={isExperienceRefInView ? { x: "0" } : {}}
-              className="flex flex-col sm:flex-row md:flex-row gap-8 justify-between h-48 w-full"
+              className="
+                flex 
+                flex-col 
+                gap-8
+                h-100vh
+                justify-between
+
+                sm:flex-row 
+                
+                md:flex-row"
             >
-              {/* First Card */}
-              <div className="w-1/3">
-                <Card
-                  jobTitle="Senior React Developer"
-                  jobDesc={[
-                    "Developed an advanced component library for TransUnion, streamlining new feature development by 20%.",
-                    "Employed React, TypeScript, and Storybook, alongside sophisticated React testing tools, to create an efficient framework, leading to a 30% boost in development productivity at TransUnion.",
-                    "Established automated testing procedures using GitHub Actions, guaranteeing thorough testing of pull requests and improving code quality and reliability."
-                  ]}
-                  jobDate="June 2023 - January 2024"
-                  jobCompany="Doran Jones"
-                />
-              </div>
+              {
+                jobs?.map((job, index) => (
+                  <div key={index} 
+                    className="
+                      w-full
+                      
+                      md:w-1/4
 
-              <div className="w-1/3">
-              {/* Second Card */}
-              <Card
-                jobTitle="Software Engineer/Full Stack Developer"
-                jobDesc={[
-                  "Spearheaded developing and enhancing IBM's cloud-native software, including the advanced application for intercompany accounting agreements. Integrated front-end technologies like React, alongside Node.js, Spring, and MySQL, resulting in a 40% reduction in accountant workload from the legacy system.",
-                  "Managed IBM DB2 and PostgreSQL databases, Docker for containerization, and version control with Git and GitHub to support the transition to cloud-native solutions, further optimizing accountant efficiency by 30%.",
-                  "Supported team with bug fixes, quality assurance, and CI/CD processes via JIRA stories, using Travis for build tests.",
-                  "Implemented AI-powered chatbot using IBM Watson, enhancing user interactions and supporting features by building and seamlessly integrating the chatbot into the software ecosystem."
-                ]}
-                jobDate="May 2019 - May 2023"
-                jobCompany="IBM" 
-              />
-              </div>
+                      lg:w-1/3
+                      
+                      ">
+                    <motion.div 
+                        initial={{ x: "-600px" }}
+                        animate={isExperienceRefInView ? { x: "0" } : {}}
+                        transition={{ delay: 0.2 }}
+                    >
+                      <Card
+                        jobTitle={job.jobTitle}
+                        jobDesc={job.jobDesc}
+                        jobDate={job.jobDate}
+                        jobCompany={job.jobCompany}
+                      />
+                    </motion.div>
+                  </div>
+                ))
+              }
+            </motion.div>
+            {/* Check Out My Projects that I don't get paid for :) */}
+            <motion.div 
+                initial={{ x: "-600px" }}
+                animate={isExperienceRefInView ? { x: "0" } : {}}
+                transition={{ delay: 0.2 }}
+            >
+              <Link
+                href="/projects"
+                className="
+                  flex
+                  justify-center
+                  p-3 
+                  text-center 
+                  text-white 
+                  rounded-full
+                  bg-gradient-to-r from-blue-300 to-blue-500
+                  font-semi-bold
 
-              <div className="w-1/3">        
-              {/* Third Card */}
-              <Card
-                jobTitle="Full Stack Developer"
-                jobDesc={[
-                  "At FirmConnect, I used ReactJS/TypeScript/MongoDB/NextJS/NestJS, with Algolia, to design a user-centric experience for driving sign-ups.",
-                  "My approach enabled users to create personalized consultancy pages, fostering engagement."
-                ]}
-                jobDate="January 2021 - January 2022"
-                jobCompany="FirmConnect"
-              />
-              </div>
+                  md:flex
+                  md:justify-center
+                  md:align-center
+                  md:m-auto
+                  md:w-1/2
+                  "
+              >
+                Check Out My Personal Projects 
+              </Link>
             </motion.div>
           </div>
         </div>

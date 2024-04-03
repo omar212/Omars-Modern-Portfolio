@@ -36,11 +36,25 @@ const Homepage = () => {
               Dive in and explore the breadth of my expertise, from sleek designs to robust solutions. Let&apos;s journey together into the heart of innovation!
             </p>
             {/* BUTTONS */}
-            <div className="w-full flex gap-4">
+            <div className="
+              justify-center
+              text-6 
+              w-full 
+              flex 
+              gap-3 
+              mb-5
+              
+              md:justify-start
+              lg:justify-start
+              xl:justify-start
+              ">
               <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-                <Link href="/projects">View Projects</Link>
+                <Link href="/projects">Experience</Link>
               </button>
-              <button className="p-4 rounded-lg ring-1 ring-black">
+              <button className="p-4 rounded-lg ring-1 ring-blue-400 bg-blue-400 text-black">
+                <Link href="/projects">Projects</Link>
+              </button>
+              <button className="p-4 rounded-lg ring-1 ring-white bg-white">
                 <Link href="/contact">Contact</Link>
               </button>
             </div>
