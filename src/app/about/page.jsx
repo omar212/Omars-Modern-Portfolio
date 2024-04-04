@@ -277,6 +277,10 @@ const AboutPage = () => {
           <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
+      <footer className="footer">
+        © 2024 Omar Elnagdy
+        <p className="power">Powered by NextJS</p>
+      </footer> 
     </motion.div>
   );
 };

@@ -15,11 +15,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <TransitionProvider>
             {children} 
-            <footer className="footer">
-              © 2024 Omar Elnagdy
-              <p className="power">Powered by NextJS</p>
-            </footer>
         </TransitionProvider>
+        
       </body>
     </html>
   );
