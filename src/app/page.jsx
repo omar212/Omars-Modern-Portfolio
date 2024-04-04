@@ -43,18 +43,19 @@ const Homepage = () => {
               flex 
               gap-3 
               mb-5
+              font-medium
               
               md:justify-start
               lg:justify-start
               xl:justify-start
               ">
-              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-                <Link href="/projects">Experience</Link>
+              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white hover:bg-gray-800">
+                <Link href="/about">Experience</Link>
               </button>
-              <button className="p-4 rounded-lg ring-1 ring-blue-400 bg-blue-400 text-black">
+              <button className="p-4 rounded-lg ring-1 ring-blue-400 bg-blue-400 text-black hover:bg-blue-600 hover:text-white">
                 <Link href="/projects">Projects</Link>
               </button>
-              <button className="p-4 rounded-lg ring-1 ring-white bg-white">
+              <button className="p-4 rounded-lg ring-1 ring-white bg-white hover:bg-gray-200">
                 <Link href="/contact">Contact</Link>
               </button>
             </div>

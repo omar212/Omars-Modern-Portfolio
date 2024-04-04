@@ -26,6 +26,7 @@ const ContactPage = () => {
                 }).then(
                 () => {
                     setSuccess(true);
+                    form.current.reset();
                     console.log('SUCCESS!');
                 },
                 (error) => {
@@ -130,15 +131,15 @@ const ContactPage = () => {
                             lg:p-10">
                         <span>Dear Omar,</span>
                         <textarea className="bg-transparent border-b-2 outline-none resize-none" rows={6} name="user_message" />
-                        <span>My email address:</span>
+                        <span>Email address:</span>
                         <input name="user_email" className="bg-transparent border-b-2 outline-none resize-none" type="email" />
                         <span>Best Regards,</span>
                         <button className="bg-purple-200 rounded p-4 text-gray-600 font-semibold">Send</button> 
                         {
-                            success && <span className="text-green-500">Message Sent!</span>
+                            success && <span className="text-center text-green-500">Message Sent!</span>
                         }
                         {
-                            error && <span className="text-red-500">Message Failed!</span>
+                            error && <span className="text-center text-red-500">Message Failed!</span>
                         }
                     </form>
                     <div className="flex gap-5 justify-center">

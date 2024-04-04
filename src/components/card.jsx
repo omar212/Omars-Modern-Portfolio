@@ -2,27 +2,27 @@ import React from 'react';
 
 const Card = ({ jobTitle, jobDesc, jobDate, jobCompany }) => {
   return (
-    <div className="flex h-fit">
+    <div className="flex rounded-lg bg-gray-400 h-fit">
       {/* LEFT */}
-      <div className="w-full  text-white rounded-lg overflow-wrap-break-word">
+      <div className="w-full overflow-wrap-break-word shadow-lg">
         {/* JOB TITLE */}
         <div className="
             flex
+            justify-center
             border-b-2 
-            border-white
-            bg-white 
+            border-gray
             text-black  
             rounded-t-lg 
-            p-3 
-            font-semibold
-            gap-2">
+            p-2 
+            font-bold
+            gap-1">
           {jobTitle} 
-          <span className="text-green-400"> @ </span>
+          <span className="font-medium">@</span>
           
-          <div className="text-red-500 font-semibold inline">{jobCompany}</div>
+          <div className="font-bold inline">{jobCompany}</div>
         </div>
         {/* JOB DESC */}
-        <div className="p-3 text-sm italic bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500">
+        <div className="p-3 text-sm font-medium">
           {jobDesc.map((desc, index) => (
             <React.Fragment key={index}>
                 <li>{desc}</li>
@@ -31,7 +31,7 @@ const Card = ({ jobTitle, jobDesc, jobDate, jobCompany }) => {
           ))}
         </div>
         {/* JOB DATE */}
-        <div className="p-3 text-blue-500 border-t-2 bg-white border-white text-sm font-semibold text-center">
+        <div className="p-3 border-t-2 text-blue-500 text-sm font-bold text-center">
           {jobDate}
         </div>
       </div>

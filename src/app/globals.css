@@ -9,3 +9,19 @@
     font-weight: 300;
     font-style: normal;
 }
+
+.footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    margin-top: 5%;
+    padding: 10px;
+    text-align: center;
+}
+
+.power {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
