@@ -29,27 +29,46 @@ const JobSwiper = () => {
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
+      }}
     >
       {jobs?.map((job, index) => (
         <SwiperSlide key={index}>
-            <h2 className="job-title">{job.jobTitle}</h2>
             <div className='company-info'>
-            {
-              job?.jobUrl ? (
-                <a className="job-company" href={job?.jobUrl} target="_blank">{job.jobCompany}</a>
-              ) : (
-                <h3 className="job-company">{job.jobCompany}</h3>
-              )
-            }
-            {job.jobIcon && <Image className='job-logo' src={job.jobIcon} alt={`${job.jobCompany} logo`} width={32} height={32} />}
-            </div>
-            <p className="job-date">{job.jobDate}</p>
-            <p className="job-location">{job.jobLocation}</p>
+              <h2 className="job-title">{job.jobTitle}</h2>
+              {
+                job?.jobUrl ? (
+                  <a className="job-company" href={job?.jobUrl} target="_blank">{job.jobCompany}</a>
+                ) : (
+                  <h3 className="job-company">{job.jobCompany}</h3>
+                )
+              }
+              {job.jobIcon && <Image className='job-logo' src={job.jobIcon} alt={`${job.jobCompany} logo`} width={38} height={38} />}
+              
+              <p className="job-date">{job.jobDate}</p>
+              <p className="job-location">{job.jobLocation}</p>
+            
             <ul className="job-description">
               {job.jobDesc?.map((responsibility, i) => (
-                <li key={i}>{responsibility}</li>
+                <>
+                  <hr />
+                  <li key={i}>{responsibility}</li>
+                </>
               ))}
             </ul>
+            </div>
         </SwiperSlide>
       ))}
     </Swiper>
