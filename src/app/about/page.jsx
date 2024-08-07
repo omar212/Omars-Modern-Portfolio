@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { jobs } from "./jobs";
 import Link from "next/link";
+import JobSwiper from "@/components/jobSwiper";
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -215,33 +216,9 @@ const AboutPage = () => {
                 
                 md:flex-row"
             >
-              {
-                jobs?.map((job, index) => (
-                  <div key={index} 
-                    className="
-                      w-full
-                      
-                      md:w-1/4
-
-                      lg:w-1/3
-                      
-                      ">
-                    <motion.div 
-                        initial={{ x: "-600px" }}
-                        animate={isExperienceRefInView ? { x: "0" } : {}}
-                        transition={{ delay: 0.2 }}
-                    >
-                      <Card
-                        jobTitle={job.jobTitle}
-                        jobDesc={job.jobDesc}
-                        jobDate={job.jobDate}
-                        jobCompany={job.jobCompany}
-                      />
-                    </motion.div>
-                  </div>
-                ))
-              }
+              <JobSwiper />
             </motion.div>
+            
             {/* Check Out My Projects that I don't get paid for :) */}
             <motion.div 
                 initial={{ x: "-600px" }}
