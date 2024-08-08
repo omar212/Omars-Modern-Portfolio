@@ -1,0 +1,25 @@
+const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "SCSS",
+    "Tailwind CSS",
+    "MongoDB",
+    "PostgreSQL",
+    "Node.js",
+    "Nest.js",
+    "Express.js",
+    "Spring Boot",
+    "GraphQL",
+    "Redux",
+    "Framer Motion",
+    "Webpack",
+    "Docker",
+    "AWS",
+    "Firebase",
+    "Git",
+    "Figma",
+  ];
+
+export default skills;
