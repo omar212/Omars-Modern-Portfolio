@@ -1,72 +1,74 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Button } from "components/ui/button";
+import { useRouter } from "next/navigation";
 
 const Homepage = () => {
+  const router = useRouter(); // Initialize the router
+
+  const handleNavigate = (page) => {
+    router.push(`/${page}`); // Navigate to /contact page
+  };
   return (
     <motion.div
-      className="h-100vh"
+      className="min-h-[90vh] flex items-center justify-center" // Centering the content
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 gap-4">
+      <div className="flex flex-col p-2 lg:flex-row gap-4 items-center justify-center lg:gap-8 xl:gap-16">
         {/* IMAGE CONTAINER */}
-        <div className="relative h-1/2 lg:h-full lg:w-1/2 ">
-          <Image 
-            src="/homeprofile.png" 
-            alt="" 
+        <div className="h-full lg:h-full lg:w-1/2 flex justify-center items-center">
+          <Image
+            src="/homeprofile.png"
+            alt=""
             width="0"
             height="0"
-            sizes="100vw"
-            className="w-fit h-auto ml-auto mr-[-17px] md:lg:xl:m-auto" 
+            sizes="100%"
+            className="w-fit h-fit mx-auto" // Centering the image
           />
         </div>
 
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
-            {/* TITLE */}
-            <h1 className="text-4xl md:text-6xl font-bold">
-              Coding Journeys, Building Future Foundations.
-            </h1>
-            {/* DESC */}
-            <p className="md:text-xl">
-              Discover the essence of my career through my projects. 
-              Dive in and explore the breadth of my expertise, from sleek designs to robust solutions. Let&apos;s journey together into the heart of innovation!
-            </p>
-            {/* BUTTONS */}
-            <div className="
-              justify-center
-              text-6 
-              w-full 
-              flex 
-              gap-3 
-              mb-5
-              font-medium
-              
-              md:justify-start
-              lg:justify-start
-              xl:justify-start
-              ">
-              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white hover:bg-gray-800">
-                <Link href="/about">Experience</Link>
-              </button>
-              <button className="p-4 rounded-lg ring-1 ring-blue-400 bg-blue-400 text-black hover:bg-blue-600 hover:text-white">
-                <Link href="/projects">Projects</Link>
-              </button>
-              <button className="p-4 rounded-lg ring-1 ring-white bg-white hover:bg-gray-200">
-                <Link href="/contact">Contact</Link>
-              </button>
-            </div>
+        <div className="h-full lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center text-center lg:text-left">
+          {/* TITLE */}
+          <h1 className="text-4xl md:text-6xl font-extrabold">
+            Coding Journeys, Building Future Foundations.
+          </h1>
+          {/* DESC */}
+          <p className="md:text-xl">
+            Discover the essence of my career through my projects. Dive in and
+            explore the breadth of my expertise, from sleek designs to robust
+            solutions. Let&apos;s journey together into the heart of innovation!
+          </p>
+          {/* BUTTONS */}
+          <div className="justify-center text-6 w-full flex gap-3 mb-5 font-medium md:justify-center lg:justify-start xl:justify-start">
+            <Button
+              onClick={() => handleNavigate("about")}
+              className="p-4 rounded-lg ring-1 ring-black bg-black text-white hover:bg-gray-800"
+            >
+              Experience
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => handleNavigate("projects")}
+              className="p-4 rounded-lg ring-1 ring-blue-400 bg-blue-400 text-black hover:bg-blue-600 hover:text-white"
+            >
+              Projects
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => handleNavigate("contact")}
+              className="p-4 rounded-lg ring-1 ring-white text-black bg-white hover:bg-gray-500"
+            >
+              Contact
+            </Button>
           </div>
+        </div>
       </div>
-      <footer className="footer">
-        © 2024 Omar Elnagdy
-        <p className="power">Powered by NextJS</p>
-      </footer> 
     </motion.div>
-  )
+  );
 };
 
 export default Homepage;

@@ -1,159 +1,150 @@
-"use client"
+"use client";
+
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import emailjs from '@emailjs/browser';
-import ResumeButton from "./resumeButton";
-import ShareButton from "./shareButton";
+import emailjs from "@emailjs/browser";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Send } from "lucide-react";
+import ActionButtons from "./ActionButtons";
 
 const ContactPage = () => {
-    const text = "Say Hello!"
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState(false);
+  const form = useRef();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false); // Track loading state
 
-    const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
+    setLoading(true); // Set loading to true when submitting
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setError(false);
-        setSuccess(false);
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        { publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY }
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+        },
+        (error) => {
+          setError(true);
+          console.error("Failed:", error.text);
+        }
+      )
+      .finally(() => {
+        setLoading(false); // Reset loading state after email is sent or failed
+      });
+  };
 
-        emailjs
-            .sendForm(
-                process.env.NEXT_PUBLIC_SERVICE_ID,
-                process.env.NEXT_PUBLIC_TEMPLATE_ID, 
-                form.current, {
-                    publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
-                }).then(
-                () => {
-                    setSuccess(true);
-                    form.current.reset();
-                    console.log('SUCCESS!');
-                },
-                (error) => {
-                    setError(true);
-                    console.log('FAILED...', error.text);
-                },
-            );
-    };
+  return (
+    <motion.div
+      className="min-h-screen"
+      initial={{ y: "-200vh" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1 }}
+    >
+      <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <motion.h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
+            {"Say Hello!".split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: index * 0.1,
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+            <span role="img" aria-label="waving hand">
+              😁
+            </span>
+          </motion.h1>
+        </div>
 
-    return (
-        <motion.div
-            className="h-full"
-            initial={{ y: "-200vh" }}
-            animate={{ y: "0%" }}
-            transition={{ duration: 1 }}
-        >
-            <div className="
-                h-[100vh] 
-                flex 
-                flex-col 
-                gap-2 
-                px-4
-
-                sm:px-8
-
-                md:gap-0
-                md:px-12
-
-                lg:gap-0
-                lg:px-20
-                lg:flex-row
-                lg:justify-center
-                lg:items-center 
-                
-                xl:px-48 
-                xl:gap-0
-                xl:items-center">
-                {/* TEXT CONTAINER */}
-                <div className="
-                    h-1/6  
-                    flex 
-                    flex-row 
-                    items-center 
-                    justify-center 
-                    text-3xl
-
-                    md:text-4xl 
-
-                    lg:h-full 
-                    lg:w-1/2  
-                    lg:text-6xl
-                    ">
-                    <div>
-                        {
-                            text.split("").map((letter, index) => (
-                                <motion.span 
-                                    key={index} 
-                                    initial={{ opacity: 1}} 
-                                    animate={{ opacity: 0 }}
-                                    transition={{
-                                        duration: 3,
-                                        repeat: Infinity,
-                                        delay: index * 0.1
-                                    }}>
-                                        {letter} 
-                                    </motion.span>
-                             ))
-                        }
-                        😁
-                    </div>
+        <div className="lg:w-1/2 w-full max-w-md">
+          <Card className="shadow-2xl hover:shadow-xl bg-lightBackground">
+            <CardContent className="p-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div className="space-y-2">
+                  <Label>Dear Omar,</Label>
+                  <Textarea
+                    name="user_message"
+                    className="min-h-[150px] resize-none bg-background"
+                    placeholder="Your message..."
+                    required
+                  />
                 </div>
-                {/* FORM CONTAINER */}
-                <div className="
-                    xl:flex
-                    xl:flex-col
-                    xl: w-full
-                    xl:justify-center
-                    xl:items-center
-                ">
-                    <form 
-                        ref={form} 
-                        onSubmit={sendEmail} 
-                        className="
-                            h-fit 
-                            p-4
-                            bg-gray-50
-                            rounded-xl 
-                            text-xl 
-                            flex 
-                            flex-col 
-                            gap-8 
-                            justify-between
-                            mb-8
-                            contact-text
-                            
-                            sm:p-12
 
-                            md:p-10
-
-                            lg:h-fit 
-                            lg:w-1/2    
-                            lg:p-10">
-                        <span>Dear Omar,</span>
-                        <textarea className="bg-transparent border-b-2 outline-none resize-none" rows={6} name="user_message" />
-                        <span>Email address:</span>
-                        <input name="user_email" className="bg-transparent border-b-2 outline-none resize-none" type="email" />
-                        <span>Best Regards,</span>
-                        <button className="bg-purple-200 rounded p-4 text-gray-600 font-semibold">Send</button> 
-                        {
-                            success && <span className="text-center text-green-500">Message Sent!</span>
-                        }
-                        {
-                            error && <span className="text-center text-red-500">Message Failed!</span>
-                        }
-                    </form>
-                    <div className="flex gap-5 justify-center">
-                        <ResumeButton />
-                        <ShareButton />
-                    </div>
+                <div className="space-y-2">
+                  <Label>Email address:</Label>
+                  <Input
+                    type="email"
+                    className="bg-background"
+                    name="user_email"
+                    placeholder="your@email.com"
+                    required
+                  />
                 </div>
-            </div>
-            <footer className="footer">
-                © 2024 Omar Elnagdy
-                <p className="power">Powered by NextJS</p>
-            </footer> 
-        </motion.div>
-    );
-}
+
+                <div className="space-y-2">
+                  <Label>Best Regards,</Label>
+                </div>
+
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <span className="animate-spin">⏳</span> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+
+                {success && (
+                  <Alert
+                    variant="default"
+                    className="bg-green-500/10 text-green-500"
+                  >
+                    <AlertDescription>
+                      Message sent successfully!
+                    </AlertDescription>
+                  </Alert>
+                )}
+
+                {error && (
+                  <Alert variant="destructive">
+                    <AlertDescription>
+                      Failed to send message. Please try again.
+                    </AlertDescription>
+                  </Alert>
+                )}
+              </form>
+            </CardContent>
+          </Card>
+
+          <ActionButtons />
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 export default ContactPage;

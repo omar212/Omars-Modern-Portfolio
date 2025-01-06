@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve", // Enables JSX
+    "incremental": true,
+    "baseUrl": ".", // Required for `paths` to work
+    "paths": {
+      "@/*": ["./*"], // Maps `@/` to the root directory
+      "components/*": ["./src/components/*"], // Maps `components/` to the `components/` directory
+      "context/*": ["./src/context/*"] // Maps `context/` to the `context/` directory
+    },
+    "module": "esnext",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/ui/card.jsx",
+    "src/components/JobExperience.jsx",
+    "build/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

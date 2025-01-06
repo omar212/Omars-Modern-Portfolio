@@ -1,6 +1,8 @@
+// src/app/layout.js
+import { ThemeProvider } from "./context/ThemeContext"; // Import ThemeProvider
+import TransitionProvider from "components/transitionProvider";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import TransitionProvider from "@/components/transitionProvider";
+import "./globals.css"; // Global CSS for dark mode styles
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,12 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <TransitionProvider>
-            {children} 
-        </TransitionProvider>
-        
+      <body className={`${inter.className} min-h-screen`}>
+        <ThemeProvider>
+          <TransitionProvider>{children}</TransitionProvider>
+        </ThemeProvider>
       </body>
+      <footer className="footer">
+        © 2024 Omar Elnagdy
+        <p className="power">Powered by NextJS</p>
+      </footer>
     </html>
   );
 }
