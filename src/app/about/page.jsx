@@ -136,7 +136,7 @@ const About = () => {
               className="flex flex-col gap-4 items-center"
             >
               <div className="flex flex-col gap-2 items-center">
-                <h1 className="font-bold text-2xl">WORK EXPERIENCE </h1>
+                <h1 className="font-extrabold text-2xl">WORK EXPERIENCE</h1>
 
                 <span className="text-md italic">
                   [{jobs.length + 1}+ years]

@@ -53,9 +53,9 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-center gap-8">
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <motion.h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
+      <div className="mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="w-full lg:w-1/2 text-center lg:text-left">
+          <motion.h1 className="text-4xl lg:text-center lg:text-6xl font-bold tracking-tight">
             {"Say Hello!".split("").map((letter, index) => (
               <motion.span
                 key={index}
@@ -76,7 +76,7 @@ const ContactPage = () => {
           </motion.h1>
         </div>
 
-        <div className="lg:w-1/2 w-full max-w-md">
+        <div className="lg:items-center lg:justify-center lg:w-1/2 w-full max-w-md">
           <Card className="shadow-2xl hover:shadow-xl bg-lightBackground">
             <CardContent className="p-6">
               <form ref={form} onSubmit={sendEmail} className="space-y-6">

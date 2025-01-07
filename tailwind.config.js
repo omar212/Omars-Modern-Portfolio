@@ -66,6 +66,10 @@ module.exports = {
           5: "hsl(var(--chart-5))",
         },
       },
+      screens: {
+        "xs-sm": { min: "0px", max: "400px" },
+        "md-lg": { min: "900px", max: "1290px" },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

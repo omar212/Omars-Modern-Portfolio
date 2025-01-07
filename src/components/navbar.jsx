@@ -98,7 +98,13 @@ const Navbar = () => {
           />
         </Link>
         <Link href="https://github.com/omar212" target="_blank">
-          <Image src="/github.png" alt="" width={24} height={24} />
+          <Image
+            src="/github.png"
+            alt=""
+            className="text-text"
+            width={24}
+            height={24}
+          />
         </Link>
         <Link href="https://www.instagram.com/omarr_x/" target="_blank">
           <Image src="/instagram.png" alt="" width={24} height={24} />
