@@ -96,6 +96,7 @@ export const AnimatedHeading = () => {
               delay: i * 0.4,
               ease: [0.43, 0.13, 0.23, 0.96],
             }}
+            className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
           >
             {word}
           </motion.span>
@@ -108,7 +109,7 @@ export const AnimatedHeading = () => {
             delay: 2 * 0.4,
             ease: [0.43, 0.13, 0.23, 0.96],
           }}
-          className="bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text cursor-pointer"
+          className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
         >
           Dreams
         </motion.span>
@@ -122,14 +123,14 @@ export const AnimatedHeading = () => {
               delay: (i + 3) * 0.4,
               ease: [0.43, 0.13, 0.23, 0.96],
             }}
-            className="text-black dark:text-white"
+            className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
           >
             {word}
           </motion.span>
         ))}
         <motion.span
           variants={growFromBottom}
-          className="bg-gradient-to-r from-green-500 to-teal-500 text-transparent bg-clip-text cursor-pointer"
+          className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
         >
           Alive
         </motion.span>
@@ -155,7 +156,7 @@ export const AnimatedHeading = () => {
             scale: 1.1,
             transition: { duration: 0.2, ease: "easeInOut" },
           }}
-          className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-transparent bg-clip-text cursor-pointer"
+          className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text cursor-pointer"
         >
           Code
         </motion.span>
@@ -173,7 +174,7 @@ export const AnimatedHeading = () => {
             scale: 1.1,
             transition: { duration: 0.2, ease: "easeInOut" },
           }}
-          className="inline-block bg-gradient-to-r from-red-600 to-orange-500 text-transparent bg-clip-text cursor-pointer"
+          className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text cursor-pointer"
         >
           Passion
         </motion.span>
@@ -191,7 +192,7 @@ export const AnimatedHeading = () => {
             scale: 1.1,
             transition: { duration: 0.2, ease: "easeInOut" },
           }}
-          className="inline-block bg-gradient-to-r from-emerald-500 to-teal-500 text-transparent bg-clip-text cursor-pointer"
+          className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text cursor-pointer"
         >
           Purpose
         </motion.span>

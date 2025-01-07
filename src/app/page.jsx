@@ -46,13 +46,13 @@ const Homepage = () => {
           {/* BUTTONS */}
           <div className="justify-center text-6 w-full flex gap-3 mb-5 font-medium md:justify-center lg:justify-start xl:justify-start">
             <Button
-              variant="secondary"
               onClick={() => handleNavigate("about")}
               className="
                   p-4 
                   rounded-lg 
                   ring-1 
-                  ring-blue-400 
+                  bg-gradient-to-r from-purple-600 to-blue-600
+                   
                   bg-blue-400 
                   text-white 
                   hover:bg-blue-600 
