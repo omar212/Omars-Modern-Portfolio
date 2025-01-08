@@ -53,7 +53,7 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: black;
     --background-opposite: 0 0% 100%;
     --light-background: 222.2 80% 8.8%;
     --foreground: 210 40% 98%;

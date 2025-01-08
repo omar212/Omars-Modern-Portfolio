@@ -96,7 +96,7 @@ export const AnimatedHeading = () => {
               delay: i * 0.4,
               ease: [0.43, 0.13, 0.23, 0.96],
             }}
-            className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
+            className="bg-clip-text cursor-pointer"
           >
             {word}
           </motion.span>
@@ -109,7 +109,7 @@ export const AnimatedHeading = () => {
             delay: 2 * 0.4,
             ease: [0.43, 0.13, 0.23, 0.96],
           }}
-          className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
+          className="bg-clip-text cursor-pointer"
         >
           Dreams
         </motion.span>
@@ -123,7 +123,7 @@ export const AnimatedHeading = () => {
               delay: (i + 3) * 0.4,
               ease: [0.43, 0.13, 0.23, 0.96],
             }}
-            className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
+            className="bg-clip-text cursor-pointer"
           >
             {word}
           </motion.span>
