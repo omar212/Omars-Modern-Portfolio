@@ -42,15 +42,34 @@ const ActionButtons = () => {
         <Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button onClick={handleShare} variant="outline" size="lg">
-                <Share className="h-4 w-4" />
+              <Button
+                onClick={handleShare}
+                variant="outline"
+                size="lg"
+                className="rounded-full border-2 border-[#585FF0]"
+              >
+                <Share className="h-4 w-4 text-[#585FF0]" />
               </Button>
             </TooltipTrigger>
             <TooltipContent>Share my portfolio</TooltipContent>
           </Tooltip>
 
           <TooltipTrigger asChild>
-            <Button onClick={handleDownload} size="lg" className="gap-2">
+            <Button
+              onClick={handleDownload}
+              size="lg"
+              className="gap-2 bg-gradient-to-r from-purple-600 to-blue-600
+                  text-white 
+                  font-extrabold
+                  hover:bg-blue-600 
+                  hover:text-white 
+                  transition-transform 
+                  duration-300 
+                  ease-in-out 
+                  hover:scale-105 
+                  active:scale-95
+                  rounded-full"
+            >
               <Download className="h-4 w-4" />
               Resume
             </Button>
@@ -60,8 +79,13 @@ const ActionButtons = () => {
 
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button onClick={handleSchedule} variant="outline" size="lg">
-              <Calendar className="h-4 w-4" />
+            <Button
+              onClick={handleSchedule}
+              variant="outline"
+              size="lg"
+              className="rounded-full border-2 border-[#585FF0]"
+            >
+              <Calendar className="h-4 w-4 text-[#585FF0]" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>Schedule a call with me</TooltipContent>

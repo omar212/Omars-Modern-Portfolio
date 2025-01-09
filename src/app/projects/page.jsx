@@ -64,7 +64,7 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col m-2 gap-8 text-black">
+                <div className="flex flex-col m-2 gap-8">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
@@ -114,7 +114,7 @@ const PortfolioPage = () => {
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
         <span>
-          <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl">
+          <h1 className="text-2xl font-extrabold sm:text-4xl md:text-4xl lg:text-5xl xl:text-8xl">
             Do you have a project?
           </h1>
         </span>
@@ -131,20 +131,42 @@ const PortfolioPage = () => {
                 d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
               />
             </defs>
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
+            <text fill="#585FF0">
+              <textPath
+                xlinkHref="#circlePath"
+                className="text-xl font-extrabold"
+              >
                 Full Stack Developer
               </textPath>
             </text>
           </motion.svg>
 
           <div
-            className="w-24 h-24 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center z-10"
+            className="
+              w-20 
+              h-20 
+              bg-gradient-to-r from-purple-600 to-blue-600 
+              absolute 
+              top-0 
+              left-0 
+              right-0 
+              bottom-0 
+              m-auto 
+              rounded-full 
+              flex 
+              items-center 
+              justify-center
+              
+              md:w-32
+              md:h-32
+
+              lg:w-38
+              lg:h-38
+              "
             style={{ pointerEvents: "auto" }} // Ensure the button is clickable
           >
             <Link href="/contact">
-              {" "}
-              <span>Hire Me</span>
+              <span className="font-extrabold text-white">HIRE ME</span>
             </Link>
           </div>
         </div>

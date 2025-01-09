@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { CodeIcon, FlameIcon } from "lucide-react";
+import TrueFocus from "components/Animations/TrueFocus/TrueFocus";
+import ShinyText from "components/Animations/ShinyText/ShinyText";
 
 export const AnimatedHeading = () => {
   const container = {
@@ -50,8 +52,7 @@ export const AnimatedHeading = () => {
     },
   };
 
-  const words = ["Where", "Digital"];
-  const afterDreamsWords = ["Come"];
+  const words = ["Where", "Digital", "Dreams", "Come"];
 
   return (
     <motion.div
@@ -63,9 +64,7 @@ export const AnimatedHeading = () => {
         items-center 
         justify-center 
         text-center 
-        lg:items-start 
-        lg:justify-start 
-        lg:text-left"
+        "
       variants={container}
       initial="hidden"
       animate="show"
@@ -74,16 +73,15 @@ export const AnimatedHeading = () => {
       <motion.h1
         className="
           w-full 
-          text-4xl 
+          text-5xl 
           font-extrabold
           flex 
           flex-wrap 
           gap-2
-          md:text-3xl 
-          lg:text-[2.3rem]
+          md:text-5xl 
+          lg:text-6xl
           items-center 
-          justify-center 
-          lg:justify-start"
+          justify-center"
         variants={fadeIn}
       >
         {words.map((word, i) => (
@@ -98,57 +96,38 @@ export const AnimatedHeading = () => {
             }}
             className="bg-clip-text cursor-pointer"
           >
-            {word}
+            <ShinyText text={word} disabled={false} speed={3} />
           </motion.span>
         ))}
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1.8,
-            delay: 2 * 0.4,
-            ease: [0.43, 0.13, 0.23, 0.96],
-          }}
-          className="bg-clip-text cursor-pointer"
-        >
-          Dreams
-        </motion.span>
-        {afterDreamsWords.map((word, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.8,
-              delay: (i + 3) * 0.4,
-              ease: [0.43, 0.13, 0.23, 0.96],
-            }}
-            className="bg-clip-text cursor-pointer"
-          >
-            {word}
-          </motion.span>
-        ))}
+
         <motion.span
           variants={growFromBottom}
-          className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-700 text-transparent bg-clip-text cursor-pointer"
+          className="font-extrabold bg-clip-text cursor-pointer"
         >
-          Alive
+          Alive.
         </motion.span>
       </motion.h1>
-
-      <motion.div
+      <TrueFocus
+        sentence="Code Passion Purpose"
+        manualMode={false}
+        blurAmount={5}
+        borderColor="red"
+        animationDuration={2}
+        pauseBetweenAnimations={1}
+      />
+      {/* <motion.div
         className="
           w-full 
-          text-2xl 
-          md:text-4xl 
+          text-3xl 
           font-extrabold 
           leading-tight 
           flex 
           flex-wrap 
-          gap-x-2 
+          gap-x-1 
           items-center 
           justify-center 
-          lg:justify-start"
+
+          "
       >
         <motion.span
           variants={scaleItem}
@@ -196,7 +175,7 @@ export const AnimatedHeading = () => {
         >
           Purpose
         </motion.span>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 };

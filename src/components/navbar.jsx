@@ -114,11 +114,11 @@ const Navbar = () => {
         </Link>
         {/* Dark Mode Toggle */}
 
-        {isDarkMode ? (
+        {/* {isDarkMode ? (
           <Sun onClick={toggleTheme} className="w-6 h-6 text-yellow-400" />
         ) : (
           <Moon onClick={toggleTheme} className="w-6 h-6 text-black" />
-        )}
+        )} */}
         <div className="justify-end md:hidden">
           {/* MENU BUTTON */}
 

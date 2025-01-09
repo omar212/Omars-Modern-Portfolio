@@ -55,14 +55,4 @@ export const jobs = [
     jobUrl: "https://www.ibm.com/",
     className: "ibm-job",
   },
-  {
-    jobTitle: "Full Stack Developer",
-    jobDesc: [
-      "At FirmConnect, I used ReactJS/TypeScript/MongoDB/NextJS/NestJS, with Algolia, to design a user-centric experience for driving sign-ups.",
-      "My approach enabled users to create personalized consultancy pages, fostering engagement.",
-    ],
-    jobDate: "January 2021 - January 2022",
-    jobLocation: "New York",
-    jobCompany: "FirmConnect",
-  },
 ];
