@@ -6,7 +6,9 @@ import { AnimatedHeading } from "components/AnimatedHeading";
 import Squares from "components/Animations/Squares/Squares";
 import CountUp from "components/Animations/CountUp/CountUp";
 import { useState } from "react";
+import SplashCursor from "components/Animations/SplashCursor/SplashCursor";
 
+<SplashCursor />;
 const Homepage = () => {
   const router = useRouter();
   const [counterFinished, setCounterFinished] = useState(false);
@@ -27,13 +29,14 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
+      <SplashCursor />
       {!counterFinished ? (
         <CountUp
           from={0}
           to={101}
           separator="%"
           direction="up"
-          duration={3}
+          duration={2}
           className="count-up-text"
           onEnd={() => triggerDelayedEnd()}
         />

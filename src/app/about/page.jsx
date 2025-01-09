@@ -123,7 +123,8 @@ const About = () => {
                         }
                       : {}
                   }
-                  className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                  whileHover={{ scale: 1.3 }}
+                  className="rounded p-2 bg-white text-black text-sm cursor-pointer"
                 >
                   {skill}
                 </motion.div>
