@@ -78,7 +78,7 @@ const Homepage = () => {
               <AnimatedHeading />
 
               {/* DESC */}
-              <p className="text-sm font-extrabold px-20 md:text-lg">
+              <p className="text-sm font-extralight px-14 font-sans md:text-lg">
                 Curious about my skills and expertise? Dive into my projects to
                 uncover the innovation and creativity that define my journey!
               </p>
