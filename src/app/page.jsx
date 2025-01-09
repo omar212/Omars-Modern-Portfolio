@@ -79,11 +79,10 @@ const Homepage = () => {
 
               {/* DESC */}
               <p className="text-sm font-extrabold px-20 md:text-lg">
-                Discover the essence of my career through my projects. Dive in
-                and explore the breadth of my expertise, from sleek designs to
-                robust solutions. Let&apos;s journey together into the heart of
-                innovation!
+                Curious about my skills and expertise? Dive into my projects to
+                uncover the innovation and creativity that define my journey!
               </p>
+
               {/* BUTTONS */}
               <div className="justify-center text-6 w-full flex gap-3 mb-5 font-medium ">
                 <Button
