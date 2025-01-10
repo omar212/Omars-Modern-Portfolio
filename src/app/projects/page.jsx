@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { items } from "./projects";
 import { useRouter } from "next/navigation";
+import { HireMeButton } from "components/Animations/HireMeButton/HireMeButton";
 
 const PortfolioPage = () => {
   const ref = useRef();
@@ -118,58 +119,7 @@ const PortfolioPage = () => {
             Do you have a project?
           </h1>
         </span>
-        <div className="relative hover:cursor-pointer" onClick={handleNavigate}>
-          <motion.svg
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-            viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px]"
-          >
-            <defs>
-              <path
-                id="circlePath"
-                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-              />
-            </defs>
-            <text fill="#585FF0">
-              <textPath
-                xlinkHref="#circlePath"
-                className="text-xl font-extrabold"
-              >
-                Full Stack Developer
-              </textPath>
-            </text>
-          </motion.svg>
-
-          <div
-            className="
-              w-20 
-              h-20 
-              bg-gradient-to-r from-purple-600 to-blue-600 
-              absolute 
-              top-0 
-              left-0 
-              right-0 
-              bottom-0 
-              m-auto 
-              rounded-full 
-              flex 
-              items-center 
-              justify-center
-              
-              md:w-32
-              md:h-32
-
-              lg:w-38
-              lg:h-38
-              "
-            style={{ pointerEvents: "auto" }} // Ensure the button is clickable
-          >
-            <Link href="/contact">
-              <span className="font-extrabold text-white">HIRE ME</span>
-            </Link>
-          </div>
-        </div>
+        <HireMeButton onClick={handleNavigate} />
       </div>
     </motion.div>
   );
