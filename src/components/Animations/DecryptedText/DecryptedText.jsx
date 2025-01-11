@@ -52,6 +52,7 @@ export default function DecryptedText({
   const [displayText, setDisplayText] = useState(text);
   const [isHovering, setIsHovering] = useState(false);
   const [isScrambling, setIsScrambling] = useState(false);
+  // eslint-disable-next-line no-undef
   const [revealedIndices, setRevealedIndices] = useState(new Set());
   const [hasAnimated, setHasAnimated] = useState(false); // for "view" mode
   const containerRef = useRef(null);

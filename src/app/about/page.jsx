@@ -3,7 +3,6 @@ import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import { jobs } from "./jobs";
-import Link from "next/link";
 import JobExperience from "components/JobExperience";
 import skills from "./skills";
 import { useRouter } from "next/navigation";
@@ -18,10 +17,7 @@ const About = () => {
     router.push(`/${page}`); // Navigate to /contact page
   };
 
-  const { scrollYProgress } = useScroll({ container: containerRef });
-
   const skillRef = useRef();
-  const isBiographyRefInView = useInView(containerRef, { margin: "-100px" });
 
   const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CodeIcon, FlameIcon } from "lucide-react";
 import TrueFocus from "components/Animations/TrueFocus/TrueFocus";
 import ShinyText from "components/Animations/ShinyText/ShinyText";
 
@@ -24,18 +23,6 @@ export const AnimatedHeading = () => {
       transition: {
         duration: 1.2,
         ease: "easeOut",
-      },
-    },
-  };
-
-  const scaleItem = {
-    hidden: { scale: 0.8, opacity: 0 },
-    show: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.43, 0.13, 0.23, 0.96],
       },
     },
   };

@@ -1,4 +1,4 @@
-import { Download, Share, Mail, Calendar } from "lucide-react";
+import { Download, Share, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,

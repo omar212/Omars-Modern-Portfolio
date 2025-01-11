@@ -5,9 +5,7 @@ import Image from "next/image";
 import NavLink from "./navLink";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { Button } from "components/ui/button";
-import { useTheme } from "../app/context/ThemeContext";
+import { Menu, X } from "lucide-react";
 
 const links = [
   {
@@ -30,7 +28,6 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { isDarkMode, toggleTheme } = useTheme();
 
   const listVariants = {
     closed: {
